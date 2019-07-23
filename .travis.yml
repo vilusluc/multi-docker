@@ -14,7 +14,7 @@ after_success:
   - docker build -t vilusluc/multi-server ./server
   - docker build -t vilusluc/multi-worker ./worker
 # Log in to the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 # Push the built images to Docker Hub
   - docker push vilusluc/multi-client
   - docker push vilusluc/multi-nginx
