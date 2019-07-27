@@ -20,3 +20,16 @@ after_success:
   - docker push vilusluc/multi-nginx
   - docker push vilusluc/multi-server
   - docker push vilusluc/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: ca-central-1
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-ca-central-1-091342932904
+  bucket_path: multi-docker
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
