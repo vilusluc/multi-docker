@@ -5,8 +5,8 @@ services:
 before_install:
   - docker build -t vilusluc/multi-client -f ./client/Dockerfile.dev ./client
 
-#script:
-#  - docker run -e CI=true vilusluc/multi-client npm test -- --coverage
+script:
+  - docker run -e CI=true vilusluc/multi-client npm test -- --coverage
 #run test
 
 after_success:
