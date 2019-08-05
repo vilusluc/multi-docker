@@ -6,6 +6,7 @@ WORKDIR '/app'
 COPY ./package.json ./
 RUN npm install
 COPY . .
+RUN chmod a+x /app/node_modules/.bin/react-scripts
 RUN npm run build
 
 # Run phase
